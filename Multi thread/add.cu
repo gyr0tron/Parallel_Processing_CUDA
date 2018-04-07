@@ -30,7 +30,7 @@ int main(void)
 
   // Run kernel on 1M elements on the GPU
   // Thread number to thread number
-  add<<<1, 256>>>(N, x, y);
+  add<<<1, 1024>>>(N, x, y);
 
   // Wait for GPU to finish before accessing on host as it doesn't block the calling CPU thread
   cudaDeviceSynchronize();
